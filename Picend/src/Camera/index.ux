@@ -8,6 +8,7 @@
         <input type="button" value="拍" class="pannel-btn" onclick="takePhoto"></input>
         <input class="switchCamera pannel-btn" type="button" value="{{deviceposition}}" onclick="switchCamera"></input>
         <input class="switchFlash pannel-btn" type="button" value="{{flashText}}" onclick="switchFlash"></input>
+        <input type="button" value="推荐页" class="pannel-btn" onclick="jumpTomain"></input>
         <image src="{{pictureUrl}}" class="picture"></image>
       </div>
       <div class="info-pannel">
@@ -83,6 +84,12 @@
     // 权限不允许处理
     handlerError() {
       console.log('用户不允许使用摄像头')
+    },
+    jumpTomain() {
+      // 跳转到推荐页
+      router.push({
+        uri: '/Demo'
+      })
     }
   }
 </script>

@@ -18,7 +18,7 @@
     "logLevel": "off"
   },
   "router": {
-    "entry": "Demo",
+    "entry": "Camera",
     "pages": {
       "Demo": {
         "component": "index"
