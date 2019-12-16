@@ -14,7 +14,7 @@
       </swiper>
     </div>
     <div class="navbar">
-        <input class="nav_btn" type="button" value="话题" onclick="changeToList" />
+        <input class="nav_btn" type="button" value="话题2" onclick="changeToList" />
         <input class="nav_btn" type="button" value="附近" onclick="changeToList" />
         <input class="pub_btn" type="button" value="发帖" onclick="" />
     </div>

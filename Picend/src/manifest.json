@@ -8,7 +8,8 @@
   "features": [
     { "name": "system.prompt" },
     { "name": "system.router" },
-    { "name": "system.shortcut" }
+    { "name": "system.shortcut" },
+    { "name": "system.media"}
   ],
   "permissions": [
     { "origin": "*" }
@@ -26,6 +27,9 @@
         "component": "index"
       },
       "About": {
+        "component": "index"
+      },
+      "Camera": {
         "component": "index"
       }
     },
@@ -52,6 +56,9 @@
         "titleBarText": "详情页"
       },
       "About": {
+        "menu": false
+      },
+      "Camera": {
         "menu": false
       }
     }
