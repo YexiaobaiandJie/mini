@@ -1,0 +1,162 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="demo-page">
+    <div class="ph_main">
+        <image
+        src="http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png"></image>
+    </div>
+    <!-- <div class="authorInfo"> -->
+      <div class="headInfo">
+        <image class="headph"
+          src="http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png"></image>
+        <text>
+          {{username}}
+        </text>
+      </div>
+      <div class="ph_desc">
+        <text>
+          {{desc}}
+        </text>
+      </div>
+      <div class="line"></div>
+
+      <div class="headInfo">
+          <image class="headph"
+            src="https://img.alicdn.com/bao/uploaded/TB1U5w_db1YBuNjSszeSuublFXa.jpg_q90.jpg_.webp"></image>
+          <text>
+            {{authorName_1}}
+          </text>
+      </div>
+      <div class="ph_desc">
+        <text class="comm_desc">
+          {{content_1}}
+        </text>
+      </div>
+      <div class="line"></div>
+      <div class="headInfo">
+          <image class="headph"
+            src="https://img.alicdn.com/bao/uploaded/TB1U5w_db1YBuNjSszeSuublFXa.jpg_q90.jpg_.webp"></image>
+          <text>
+            {{authorName_2}}
+          </text>
+      </div>
+      <div class="ph_desc">
+        <text class="comm_desc">
+          {{content_2}}
+        </text>
+      </div>
+      <div class="line"></div>
+      <div class="headInfo">
+          <image class="headph"
+            src="http://static.simpledesktops.com/uploads/desktops/2010/10/03/Block_Search.png"></image>
+          <text>
+            {{authorName_3}}
+          </text>
+      </div>
+      <div class="ph_desc">
+        <text class="comm_desc">
+          {{content_3}}
+        </text>
+      </div>
+
+      <div class="moreComment">
+        <text>
+          下拉加载更多评论
+        </text>
+      </div>
+
+    </div>
+      
+  </div>
+</template>
+
+<script>
+export default {
+  private: {
+    text: '欢迎打开详情页',
+    username: '友人A',
+    desc: '这张照片是取景自我家厨房，主题是两杯柠檬茶以及案板。拍照角度与案板成45度，注意利用的光线增加主体的通透感。',
+    authorName_1: '有偿评论',
+    headph_1: '',
+    content_1: '哇，友人A大大这张照片也太好看了叭，看的我也好想去拍一张。',
+    authorName_2: '围观群众',
+    headph_2: '',
+    content_2: '沙发占楼',
+    authorName_3: '雅思3.0',
+    headph_3: '',
+    content_3: 'A大大应该是专门学过摄影的，这么专业的构图，光影的应用，不是普通人。'
+  },
+  /**
+   * 当用户点击菜单按钮时触发，调用app中定义的方法showMenu
+   * 注意：使用加载器测试`创建桌面快捷方式`功能时，请先在`系统设置`中打开`应用加载器`的`桌面快捷方式`权限
+   */
+  onMenuPress() {
+    this.$app.$def.showMenu()
+  }
+}
+</script>
+
+<style>
+  .demo-page {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .ph_main {
+    width: 90%;
+    height:500px;
+    margin-top:40px;
+    
+  }
+  .title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .authorInfo {
+    margin: 20px auto;
+    width: 80%;
+    height: 240px;
+    background-color: #c9c9c9;
+    color: #000000;
+  }
+  .headInfo {
+    margin: 20px auto 0;
+    padding-top:10px;
+    width:90%;
+    height:80px;
+    background-color: #c9c9c9;
+  }
+  .ph_desc {
+    width: 90%;
+    height: 140px;
+    background-color: #c9c9c9 ;
+    padding: 20px;
+  }
+  .comm_desc {
+    width: 100%;
+    margin-left:50px;
+    background-color: #c9c9c9 ;
+    
+  }
+  .headph {
+    width: 70px;
+    height: 70px;
+    margin: auto 20px;
+    border-radius: 35px;
+  }
+  .comment_head {
+    margin: 20px 0 0 10px;
+    width: 100px;
+    height: 70px;
+    background-color: red;
+  }
+  .line {
+    margin-top: 20px;
+    width: 100%;
+    height:3px;
+    background-color: #c9c9c9
+  }
+  .moreComment {
+    margin: 40px 0px;
+  }
+</style>

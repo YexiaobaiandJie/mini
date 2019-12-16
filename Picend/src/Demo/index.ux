@@ -1,0 +1,171 @@
+<template>
+  <!-- template里只能有一个根节点 -->
+  <div class="demo-page">
+    <div>
+      <swiper class="banner" autoplay="true" interval="6000">
+        <stack class="banner">
+          <image class="banner-image"
+            src="https://img.alicdn.com/bao/uploaded/TB1U5w_db1YBuNjSszeSuublFXa.jpg_q90.jpg_.webp"></image>
+        </stack>
+        <stack class="banner">
+          <image class="banner-image"
+            src="https://img.alicdn.com/bao/uploaded/TB1U5w_db1YBuNjSszeSuublFXa.jpg_q90.jpg_.webp"></image>
+        </stack>
+      </swiper>
+    </div>
+    <div class="navbar">
+        <input class="nav_btn" type="button" value="话题" onclick="changeToList" />
+        <input class="nav_btn" type="button" value="附近" onclick="changeToList" />
+        <input class="pub_btn" type="button" value="发帖" onclick="" />
+    </div>
+    <div class="line"></div>
+    <list class="list">
+      <block for="phList">
+        <list-item type="img" onclick="jumpToDetail">
+            <image class="example"
+              src="{{$item.src}}"></image>
+        </list-item>
+      </block>
+    </list>
+    <!-- 点击跳转详情页 -->
+    <!-- <input class="btn" type="button" value="跳转到详情页" onclick="routeDetail" /> -->
+  </div>
+</template>
+
+<script>
+  import router from '@system.router'
+
+  export default {
+    // 页面级组件的数据模型，影响传入数据的覆盖机制：private内定义的属性不允许被覆盖
+    private: {
+      title: '示例页面',
+      topic: '话题',
+      phList: [
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2010/10/03/Block_Search.png'
+        },
+        {
+          src: 'https://img.alicdn.com/bao/uploaded/TB1U5w_db1YBuNjSszeSuublFXa.jpg_q90.jpg_.webp'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        }
+      ],
+      phList2: [
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2010/10/03/Block_Search.png'
+        },
+        {
+          src: 'https://img.alicdn.com/bao/uploaded/TB1U5w_db1YBuNjSszeSuublFXa.jpg_q90.jpg_.webp'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        },
+        {
+          src: 'http://static.simpledesktops.com/uploads/desktops/2019/08/27/trippin.png'
+        }
+      ]
+    },
+    routeDetail() {
+      // 跳转到应用内的某个页面，router用法详见：文档->接口->页面路由
+      router.push({
+        uri: '/DemoDetail'
+      })
+    },
+    jumpToDetail() {
+      // 跳转到作品详情页
+      router.push({
+        uri: '/DemoDetail'
+      })
+    },
+    changeToList(){
+      let temp = this.phList2;
+      this.phList2 = this.phList;
+      this.phList = temp;
+    }
+  }
+</script>
+
+<style>
+  .demo-page {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 550px;
+    height: 86px;
+    margin-top: 75px;
+    border-radius: 43px;
+    background-color: #09ba07;
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+  .nav_btn {
+    width: 150px;
+    height: 70px;
+    margin: auto 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 30px;
+  }
+
+  .pub_btn {
+    width: 150px;
+    height: 70px;
+    margin: auto 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 30px;
+    margin-left:300px;
+  }
+  .banner{
+    width: 100%;
+    height: 400px;
+    background-color: #000000
+  }
+  .banner-image{
+    width: 100%;
+    height: 100%;
+  }
+  .navbar {
+    width: 100%;
+    height: 80px;
+  }
+  .line {
+    width: 100%;
+    height:3px;
+    background-color: #c9c9c9
+  }
+  .list {
+    width: 100%;
+  }
+  .example {
+    width:90%;
+    height: 300px;
+    object-fit: cover;
+    margin: 20px auto;
+  }
+</style>
